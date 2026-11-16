@@ -42,9 +42,12 @@
             } else {
                 let directory = "\(interfaces.sdk)/System/Library/Frameworks/\(module).framework/Modules/\(module).swiftmodule"
                 let read = Highlighting.Swift.Reference.read("\(directory)/\(interfaces.triple).swiftinterface")
-                text = read.isEmpty && interfaces.triple.hasPrefix("arm64-")
-                    ? Highlighting.Swift.Reference.read("\(directory)/arm64e-\(interfaces.triple.dropFirst("arm64-".count)).swiftinterface")
-                    : read
+                if read.isEmpty, interfaces.triple.hasPrefix("arm64-") {
+                    let triple = "arm64e-\(interfaces.triple.dropFirst("arm64-".count))"
+                    text = Highlighting.Swift.Reference.read("\(directory)/\(triple).swiftinterface")
+                } else {
+                    text = read
+                }
                 interfaces.texts[module] = text
             }
             var chunks: [[Substring]] = []
