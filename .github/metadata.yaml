@@ -1,0 +1,10 @@
+description: "Source highlighting for Swift: each token of a file with the role it plays, its own declarations and the project's names told from the system's."
+topics:
+  - compositions
+  - highlighting
+  - syntax-highlighting
+  - swift-syntax
+homepage: "https://swift-institute.org"
+readme:
+  family: E
+platforms: apple
