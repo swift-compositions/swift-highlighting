@@ -1,8 +1,6 @@
 # swift-highlighting
 
-Use this package when source code is to be drawn the way an editor draws it, with each word coloured by the role it plays: on a page, in a slide, in a film. `Highlighting` holds the values every highlighter gives: a `Highlighting.Token`, a run of text with its `Highlighting.Role`. Lines are arrays of tokens, and a file is an array of lines. Pick a colour, weight or style per role yourself; nothing here draws.
-
-To highlight Swift, enable the `Swift` trait and call `Highlighting.Swift.lines(of:in:)` with the file to show and every `Highlighting.Swift.File` of the project it belongs to. It parses the file with swift-syntax and runs the compiler on the project to tell the project's own names from the system's. It runs on a Mac with Xcode or the Command Line Tools selected, and blocks the calling thread until the compiler has finished, so call it off the main thread.
+Use this package when source code is to be drawn the way an editor draws it, with each word coloured by the role it plays: on a page, in a slide, in a film. `Highlighting` holds the values every highlighter gives: a `Highlighting.Token`, a run of text with its `Highlighting.Role`. Lines are arrays of tokens, and a file is an array of lines. Nothing here draws: pick a colour, weight or style per role yourself. To highlight Swift, enable the `Swift` trait and call `Highlighting.Swift.lines(of:in:)` with the file to show and every `Highlighting.Swift.File` of the project it belongs to. It parses the file with swift-syntax and runs the compiler on the project to tell the project's own names from the system's. It runs on a Mac with Xcode or the Command Line Tools selected, and blocks the calling thread until the compiler has finished, so call it off the main thread.
 
 ## Laws
 
